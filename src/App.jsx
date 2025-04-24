@@ -23,47 +23,50 @@ const products = [
 function NavBar() {
   const [open, setOpen] = useState(false);
   const linkClasses = ({ isActive }) =>
-    `${isActive ? "underline " : ""}block py-2 md:py-0 md:inline-block`;
+    `${isActive ? "underline " : ""}block py-2 md:py-0`;
 
   return (
     <nav className="bg-white text-pink-600 font-script sticky top-0 z-50 shadow">
-      <div className="container mx-auto flex items-center justify-between p-4">
+      <div className="container mx-auto p-4">
 
-        {/* LOGO animato */}
-        <NavLink to="/" className="flex items-center gap-2">
-          <img
-            src={logoImg}
-            alt="Il mio piccolo mondo creativo"
-            className="h-10 w-auto animate-float"
-          />
-          <span className="sr-only">Il mio piccolo mondo creativo</span>
-        </NavLink>
+        {/* ———  BARRE SUPERIORE: logo + carrello + hamburger ——— */}
+        <div className="flex items-center justify-between">
+          {/* LOGO */}
+          <NavLink to="/" className="flex items-center gap-2">
+            <img
+              src={logoImg}
+              alt="Il mio piccolo mondo creativo"
+              className="h-10 w-auto animate-float"
+            />
+            <span className="sr-only">Il mio piccolo mondo creativo</span>
+          </NavLink>
 
-        {/* ICONA CARRELLO */}
-        <a
-          href="#"
-          className="snipcart-checkout relative ml-4 md:order-last md:ml-6"
-        >
-          <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M3 3h2l.4 2M7 13h10l4-8H5.4" stroke="currentColor" strokeWidth="2" fill="none" />
-            <circle cx="9" cy="20" r="2" />
-            <circle cx="17" cy="20" r="2" />
-          </svg>
-          <span className="snipcart-items-count absolute -top-2 -right-3 text-xs bg-pink-600 text-white rounded-full h-5 w-5 flex items-center justify-center" />
-        </a>
+          {/* CARRELLINO */}
+          <a
+            href="#"
+            className="snipcart-checkout relative ml-4 md:ml-6 order-last md:order-none"
+          >
+            <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 3h2l.4 2M7 13h10l4-8H5.4" stroke="currentColor" strokeWidth="2" fill="none" />
+              <circle cx="9"  cy="20" r="2" />
+              <circle cx="17" cy="20" r="2" />
+            </svg>
+            <span className="snipcart-items-count absolute -top-2 -right-3 text-xs bg-pink-600 text-white rounded-full h-5 w-5 flex items-center justify-center" />
+          </a>
 
-        {/* HAMBURGER mobile */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden text-3xl ml-4"
-          aria-label="Apri/chiudi menu"
-        >
-          ☰
-        </button>
+          {/* HAMBURGER */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="md:hidden text-3xl"
+            aria-label="Apri menu"
+          >
+            ☰
+          </button>
+        </div>
 
-        {/* LINK MENU */}
+        {/* ———  MENU MOBILE (verticale) / DESKTOP (orizzontale) ——— */}
         <div
-          className={`${open ? "flex" : "hidden"} flex-col md:flex-row md:block space-y-2 md:space-y-0 md:space-x-6 text-lg`}
+          className={`${open ? "mt-4 flex" : "hidden"} flex-col md:mt-0 md:flex md:flex-row md:items-center md:space-x-6 text-lg`}
         >
           <NavLink to="/"          className={linkClasses}>Home</NavLink>
           <NavLink to="/chi-siamo" className={linkClasses}>Chi&nbsp;siamo</NavLink>
