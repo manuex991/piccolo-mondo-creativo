@@ -23,7 +23,7 @@ const products = [
 function NavBar() {
   const [open, setOpen] = useState(false);
   const linkClasses = ({ isActive }) =>
-    `${isActive ? "underline " : ""}py-2 md:py-0 md:inline-block`;
+    `${isActive ? "underline " : ""}block py-2 md:py-0 md:inline-block`;
 
   return (
     <nav className="bg-white text-pink-600 font-script sticky top-0 z-50 shadow">
@@ -63,7 +63,7 @@ function NavBar() {
 
         {/* LINK MENU */}
         <div
-          className={`${open ? "block" : "hidden"} md:block space-y-2 md:space-y-0 md:space-x-6 text-lg`}
+          className={`${open ? "flex" : "hidden"} flex-col md:flex-row md:block space-y-2 md:space-y-0 md:space-x-6 text-lg`}
         >
           <NavLink to="/"          className={linkClasses}>Home</NavLink>
           <NavLink to="/chi-siamo" className={linkClasses}>Chi&nbsp;siamo</NavLink>
