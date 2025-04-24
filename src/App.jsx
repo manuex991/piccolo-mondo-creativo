@@ -8,17 +8,18 @@ import {
 } from "react-router-dom";
 import { useState } from "react";
 
-import Home from "./Home.jsx";      // nuova Home minimal
+import Home from "./Home.jsx";          // ← nuova Home minimal (senza foto)
 import logoImg from "./assets/logo.png";
 import "./index.css";
+
 /* ---------- DATI PRODOTTI (placeholder) ---------- */
 const products = [
-  { id: "cuscino",    name: "Cuscino personalizzato", price: 25 },
-  { id: "tovaglietta", name: "Tovaglietta americana", price: 18 },
+  { id: "cuscino",     name: "Cuscino personalizzato",  price: 25 },
+  { id: "tovaglietta", name: "Tovaglietta americana",   price: 18 },
 ];
 
 /* ================================================= */
-/*                    NAVBAR                         */
+/*                      NAVBAR                       */
 /* ================================================= */
 function NavBar() {
   const [open, setOpen] = useState(false);
@@ -28,7 +29,6 @@ function NavBar() {
   return (
     <nav className="bg-white text-pink-600 font-script sticky top-0 z-50 shadow">
       <div className="container mx-auto p-4">
-
         {/* barra superiore */}
         <div className="flex items-center justify-between">
           {/* logo */}
@@ -79,7 +79,7 @@ function NavBar() {
 }
 
 /* ================================================= */
-/*                    ALTRI COMPONENTI               */
+/*                    PAGINE SEMPLICI                */
 /* ================================================= */
 function About() {
   return (
@@ -104,6 +104,9 @@ function Contact() {
   );
 }
 
+/* ================================================= */
+/*                    SHOP                           */
+/* ================================================= */
 function Shop() {
   return (
     <section className="container mx-auto py-12">
@@ -128,6 +131,9 @@ function Shop() {
   );
 }
 
+/* ================================================= */
+/*                DETTAGLIO PRODOTTO                 */
+/* ================================================= */
 function ProductDetails() {
   const { productId } = useParams();
   const product = products.find((p) => p.id === productId);
@@ -198,7 +204,9 @@ function Footer() {
   );
 }
 
-/* ======================= ROOT ===================== */
+/* ================================================= */
+/*                    APP ROOT                       */
+/* ================================================= */
 export default function App() {
   return (
     <Router>
