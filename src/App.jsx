@@ -8,10 +8,9 @@ import {
 } from "react-router-dom";
 import { useState } from "react";
 
-import Home from "./Home.jsx";      //  ⬅️  nuova Home minimal
+import Home from "./Home.jsx";      // nuova Home minimal
 import logoImg from "./assets/logo.png";
 import "./index.css";
-
 /* ---------- DATI PRODOTTI (placeholder) ---------- */
 const products = [
   { id: "cuscino",    name: "Cuscino personalizzato", price: 25 },
