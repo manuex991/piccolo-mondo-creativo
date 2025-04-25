@@ -4,8 +4,7 @@ import { motion } from "framer-motion";
 import { FaPhoneAlt, FaFacebookF, FaEnvelope } from "react-icons/fa";
 
 export default function Contact() {
-  // Sostituisci "abcdefg" con il tuo ID Formspree
-  const [state, handleSubmit] = useForm("abcdefg");
+  const [state, handleSubmit] = useForm("abcdefg"); // 🔁 Sostituisci con il tuo ID Formspree
 
   return (
     <motion.section
@@ -18,7 +17,7 @@ export default function Contact() {
         Contattaci
       </h2>
 
-      {/* Informazioni di contatto statiche */}
+      {/* Informazioni statiche */}
       <div className="mb-8 space-y-4">
         <div className="flex items-center gap-3">
           <FaPhoneAlt className="text-pink-600" />
