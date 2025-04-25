@@ -1,4 +1,4 @@
-// src/App.jsx - aggiornamento forzato deploy
+// src/App.jsx
 import {
   BrowserRouter as Router,
   Routes,
@@ -11,6 +11,7 @@ import { useState } from "react";
 
 import Home from "./Home.jsx";
 import Contact from "./Contact.jsx";
+import Registrazione from "./Registrazione.jsx";
 import logoImg from "./assets/logo.png";
 import "./index.css";
 
@@ -79,6 +80,9 @@ function NavBar() {
           </NavLink>
           <NavLink to="/contatti" className={linkClasses}>
             Contatti
+          </NavLink>
+          <NavLink to="/registrazione" className={linkClasses}>
+            Registrati
           </NavLink>
         </div>
       </div>
@@ -214,6 +218,7 @@ export default function App() {
         <Route path="/shop" element={<Shop />} />
         <Route path="/shop/:productId" element={<ProductDetails />} />
         <Route path="/contatti" element={<Contact />} />
+        <Route path="/registrazione" element={<Registrazione />} />
       </Routes>
       <Footer />
     </Router>
