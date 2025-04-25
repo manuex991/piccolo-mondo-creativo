@@ -1,4 +1,4 @@
-// src/App.jsx
+// src/App.jsx - aggiornamento forzato deploy
 import {
   BrowserRouter as Router,
   Routes,
