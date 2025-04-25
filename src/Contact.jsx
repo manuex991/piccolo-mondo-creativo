@@ -33,7 +33,7 @@ export default function Contact() {
             className="inline-flex p-2 rounded hover:bg-pink-50"
             aria-label="Visita la pagina Facebook"
           >
-            <FaFacebookF className="text-pink-600" size={24} />
+            <FaFacebookF className="text-[#1877F2]" size={32} />
           </a>
         </div>
         <div className="flex items-center gap-3">
