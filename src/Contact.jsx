@@ -22,15 +22,19 @@ export default function Contact() {
       <div className="mb-8 space-y-4">
         <div className="flex items-center gap-3">
           <FaPhoneAlt className="text-pink-600" />
-          <span>+39 344 402 9312</span>
+          <a href="tel:+393444029312" className="underline">
+            +39 344 402 9312
+          </a>
         </div>
         <div className="flex items-center gap-3">
           <a
             href="https://facebook.com/share/1BLAX58z3D/?mibextid=wwXlfr"
             target="_blank"
             rel="noopener noreferrer"
+            className="inline-flex p-2 rounded hover:bg-pink-50"
+            aria-label="Visita la pagina Facebook"
           >
-            <FaFacebookF className="text-pink-600 hover:text-pink-800" size={24} />
+            <FaFacebookF className="text-pink-600" size={24} />
           </a>
         </div>
         <div className="flex items-center gap-3">
