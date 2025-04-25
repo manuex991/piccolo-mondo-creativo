@@ -27,64 +27,66 @@ function NavBar() {
 
   return (
     <nav className="bg-white text-pink-600 font-script sticky top-0 z-50 shadow">
-      <div className="container mx-auto p-4">
-        <div className="flex items-center justify-between">
-          <NavLink to="/" className="flex items-center gap-2">
-            <img
-              src={logoImg}
-              alt="Il mio piccolo mondo creativo"
-              className="h-10 w-auto animate-float"
-            />
-            <span className="sr-only">Il mio piccolo mondo creativo</span>
-          </NavLink>
-
-          <a
-            href="#"
-            className="snipcart-checkout relative ml-4 md:order-last md:ml-6"
-          >
-            <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M3 3h2l.4 2M7 13h10l4-8H5.4"
-                stroke="currentColor"
-                strokeWidth="2"
-                fill="none"
-              />
-              <circle cx="9" cy="20" r="2" />
-              <circle cx="17" cy="20" r="2" />
-            </svg>
-            <span className="snipcart-items-count absolute -top-2 -right-3 text-xs bg-pink-600 text-white rounded-full h-5 w-5 flex items-center justify-center" />
-          </a>
-
-          <button
-            onClick={() => setOpen(!open)}
-            className="md:hidden text-2xl focus:outline-none"
-            aria-label="Apri/chiudi menu"
-          >
-            ☰
-          </button>
-        </div>
-
-        <div
-          className={`${
-            open ? "block" : "hidden"
-          } md:flex md:space-x-6 mt-4 md:mt-2 text-center md:text-left`}
+      <div className="container mx-auto flex items-center justify-between p-4 relative">
+        {/* Hamburger a sinistra */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden text-2xl focus:outline-none absolute left-4 top-1/2 transform -translate-y-1/2"
+          aria-label="Apri/chiudi menu"
         >
-          <NavLink to="/" className={linkClasses}>
-            Home
-          </NavLink>
-          <NavLink to="/chi-siamo" className={linkClasses}>
-            Chi siamo
-          </NavLink>
-          <NavLink to="/shop" className={linkClasses}>
-            Shop
-          </NavLink>
-          <NavLink to="/contatti" className={linkClasses}>
-            Contatti
-          </NavLink>
-          <NavLink to="/registrazione" className={linkClasses}>
-            Registrati
-          </NavLink>
-        </div>
+          ☰
+        </button>
+
+        {/* Logo al centro */}
+        <NavLink to="/" className="flex items-center justify-center mx-auto">
+          <img
+            src={logoImg}
+            alt="Il mio piccolo mondo creativo"
+            className="h-[3rem] w-auto animate-float"
+          />
+          <span className="sr-only">Il mio piccolo mondo creativo</span>
+        </NavLink>
+
+        {/* Carrellino a destra */}
+        <a
+          href="#"
+          className="snipcart-checkout relative ml-4 md:order-last md:ml-6 absolute right-4 top-1/2 transform -translate-y-1/2"
+        >
+          <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M3 3h2l.4 2M7 13h10l4-8H5.4"
+              stroke="currentColor"
+              strokeWidth="2"
+              fill="none"
+            />
+            <circle cx="9" cy="20" r="2" />
+            <circle cx="17" cy="20" r="2" />
+          </svg>
+          <span className="snipcart-items-count absolute -top-2 -right-3 text-xs bg-pink-600 text-white rounded-full h-5 w-5 flex items-center justify-center" />
+        </a>
+      </div>
+
+      {/* Menu navigazione */}
+      <div
+        className={`${
+          open ? "block" : "hidden"
+        } md:flex md:items-center md:justify-center md:space-x-8 text-center md:text-left`}
+      >
+        <NavLink to="/" className={linkClasses}>
+          Home
+        </NavLink>
+        <NavLink to="/chi-siamo" className={linkClasses}>
+          Chi siamo
+        </NavLink>
+        <NavLink to="/shop" className={linkClasses}>
+          Shop
+        </NavLink>
+        <NavLink to="/contatti" className={linkClasses}>
+          Contatti
+        </NavLink>
+        <NavLink to="/registrazione" className={linkClasses}>
+          Registrati
+        </NavLink>
       </div>
     </nav>
   );
