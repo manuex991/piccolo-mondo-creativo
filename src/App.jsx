@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 import { useState } from "react";
 
-import Home from "./Home.jsx";         // Homepage minimal senza foto
+import Home from "./home.jsx";         // Homepage minimal senza foto
 import Contact from "./Contact.jsx";   // Form Contatti con Formspree
 import logoImg from "./assets/logo.png";
 import "./index.css";
