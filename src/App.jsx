@@ -1,3 +1,4 @@
+// src/App.jsx
 import {
   BrowserRouter as Router,
   Routes,
@@ -8,14 +9,15 @@ import {
 } from "react-router-dom";
 import { useState } from "react";
 
-import Home from "./Home.jsx";          // ← nuova Home minimal (senza foto)
+import Home from "./Home.jsx";         // Homepage minimal senza foto
+import Contact from "./Contact.jsx";   // Form Contatti con Formspree
 import logoImg from "./assets/logo.png";
 import "./index.css";
 
 /* ---------- DATI PRODOTTI (placeholder) ---------- */
 const products = [
-  { id: "cuscino",     name: "Cuscino personalizzato",  price: 25 },
-  { id: "tovaglietta", name: "Tovaglietta americana",   price: 18 },
+  { id: "cuscino",    name: "Cuscino personalizzato", price: 25 },
+  { id: "tovaglietta", name: "Tovaglietta americana", price: 18 },
 ];
 
 /* ================================================= */
@@ -90,22 +92,8 @@ function About() {
   );
 }
 
-function Contact() {
-  return (
-    <section className="container mx-auto py-12">
-      <h2 className="text-3xl font-script font-semibold mb-4">Contattaci</h2>
-      <form className="grid gap-4 max-w-md mx-auto">
-        <input type="text"  placeholder="Il tuo nome"  className="border p-2 rounded" />
-        <input type="email" placeholder="Email"       className="border p-2 rounded" />
-        <textarea          placeholder="Messaggio"    className="border p-2 rounded" />
-        <button type="submit" className="bg-pink-600 text-white py-2 rounded">Invia</button>
-      </form>
-    </section>
-  );
-}
-
 /* ================================================= */
-/*                    SHOP                           */
+/*                        SHOP                       */
 /* ================================================= */
 function Shop() {
   return (
@@ -132,7 +120,7 @@ function Shop() {
 }
 
 /* ================================================= */
-/*                DETTAGLIO PRODOTTO                 */
+/*              DETTAGLIO PRODOTTO                   */
 /* ================================================= */
 function ProductDetails() {
   const { productId } = useParams();
@@ -194,11 +182,15 @@ function ProductDetails() {
 }
 
 /* ================================================= */
+/*                       FOOTER                      */
+/* ================================================= */
 function Footer() {
   return (
     <footer className="bg-gray-100 mt-16">
       <div className="container mx-auto py-8 text-center text-sm">
-        <p>© {new Date().getFullYear()} Il mio piccolo mondo creativo · Articoli cuciti a mano con amore</p>
+        <p>
+          © {new Date().getFullYear()} Il mio piccolo mondo creativo · Articoli cuciti a mano con amore
+        </p>
       </div>
     </footer>
   );
@@ -211,16 +203,14 @@ export default function App() {
   return (
     <Router>
       <NavBar />
-      <>
-        <Routes>
-          <Route path="/"                element={<Home />} />
-          <Route path="/chi-siamo"       element={<About />} />
-          <Route path="/contatti"        element={<Contact />} />
-          <Route path="/shop"            element={<Shop />} />
-          <Route path="/shop/:productId" element={<ProductDetails />} />
-        </Routes>
-        <Footer />
-      </>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/chi-siamo" element={<About />} />
+        <Route path="/contatti" element={<Contact />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/shop/:productId" element={<ProductDetails />} />
+      </Routes>
+      <Footer />
     </Router>
   );
 }
