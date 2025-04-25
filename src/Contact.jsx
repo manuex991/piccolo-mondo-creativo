@@ -1,9 +1,10 @@
 // src/Contact.jsx
 import { useForm, ValidationError } from "@formspree/react";
 import { motion } from "framer-motion";
+import { FaPhoneAlt, FaFacebookF, FaEnvelope } from "react-icons/fa";
 
 export default function Contact() {
-  // Sostituisci “abcdefg” con il tuo ID Formspree
+  // Sostituisci "abcdefg" con il tuo ID Formspree
   const [state, handleSubmit] = useForm("abcdefg");
 
   return (
@@ -13,9 +14,37 @@ export default function Contact() {
       transition={{ duration: 0.5 }}
       className="container mx-auto py-12 px-4 max-w-lg"
     >
-      <h2 className="text-3xl font-script font-semibold mb-4 text-center">Contattaci</h2>
+      <h2 className="text-3xl font-script font-semibold mb-6 text-center">
+        Contattaci
+      </h2>
 
-      {/* invio via hook Formspree */}
+      {/* Informazioni di contatto statiche */}
+      <div className="mb-8 space-y-4">
+        <div className="flex items-center gap-3">
+          <FaPhoneAlt className="text-pink-600" />
+          <span>+39 344 402 9312</span>
+        </div>
+        <div className="flex items-center gap-3">
+          <a
+            href="https://facebook.com/share/1BLAX58z3D/?mibextid=wwXlfr"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaFacebookF className="text-pink-600 hover:text-pink-800" size={24} />
+          </a>
+        </div>
+        <div className="flex items-center gap-3">
+          <FaEnvelope className="text-pink-600" />
+          <a
+            href="mailto:ilmiopiccolomondocreativo.shop@gmail.com"
+            className="underline"
+          >
+            ilmiopiccolomondocreativo.shop@gmail.com
+          </a>
+        </div>
+      </div>
+
+      {/* Form di contatto */}
       <form onSubmit={handleSubmit} className="grid gap-4">
         <input
           id="name"
