@@ -15,7 +15,7 @@ export default function Home() {
       {/* Contenuto centrale */}
       <div className="relative z-10 container mx-auto px-4 text-center py-20">
         <h1 className="text-4xl md:text-5xl font-script font-bold mb-6">
-          Benvenuti nel nostro laboratorio di cucito creativo!
+          Benvenuti nel mio piccolo mondo creativo!
         </h1>
         <p className="max-w-xl mx-auto text-lg">
           Trova articoli unici cuciti a mano e personalizzali con nomi, frasi e tessuti che preferisci.
